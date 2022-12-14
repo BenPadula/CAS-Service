@@ -1,0 +1,22 @@
+function primeFactorization(n) {
+  const primes = [];
+  let toFactor = n;
+  for (let i = 2; i <= n; i = i + 1) {
+    while ((toFactor / i) % 1 == 0) {
+      toFactor = toFactor / i;
+      primes.push(i);
+    }
+  }
+  return primes;
+}
+
+const array = [];
+let x = 1;
+let y = 100;
+
+console.log('\nCalculating Prime Factorisation Between', x, 'and', y, '\n');
+
+for(let n = x; n <= y; n = n + 1) {
+  let primesFound = primeFactorization(n);
+    console.log(n, ' = ', primesFound); 
+}
